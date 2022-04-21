@@ -1,0 +1,3 @@
+{:main [
+        {:des   "Caps Lock: tap for Escape, hold for Control." :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+]}

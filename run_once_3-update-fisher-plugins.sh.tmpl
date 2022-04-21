@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# fisher plugins hash: {{ include "dot_config/private_fish/fish_plugins" | sha256sum }}
+
+echo "updating fisher plugins..."
+fisher update
+echo "updating fisher plugins DONE."
