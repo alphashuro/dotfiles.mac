@@ -44,6 +44,11 @@ cask "docker"
 cask "karabiner-elements"
 cask "zerotier-one"
 
+cask "stats"
+
+mas "1password-for-safari"
+
 # emacs
 tap "railwaycat/emacsmacport"
 cask "railwaycat/emacsmacport/emacs-mac"
+
