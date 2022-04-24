@@ -43,6 +43,7 @@ cask "kitty"
 cask "docker"
 cask "karabiner-elements"
 cask "zerotier-one"
+cask "cmake"
 
 cask "stats"
 
