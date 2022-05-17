@@ -5,4 +5,14 @@ echo "installing brew..."
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+
+echo "running brew bundle install..."
+brew bundle install
+echo "running brew bundle install DONE."
+
+echo "starting goku service..."
+brew services start goku
+echo "starting goku service DONE."
+
 echo "installing brew DONE."
