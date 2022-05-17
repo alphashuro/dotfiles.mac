@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/bin/bash
 
 echo "setting up fish..."
 # default shell
