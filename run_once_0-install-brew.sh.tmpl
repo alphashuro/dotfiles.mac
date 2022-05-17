@@ -1,0 +1,79 @@
+#!/bin/bash
+echo "installing brew..."
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+brew bundle --file=- <<EOF
+    brew 'chezmoi'
+EOF
+if [ ! -f "$HOME/.config/chezmoi/chezmoi.toml" ]; then
+  chezmoi init --apply --verbose https://github.com/monfresh/dotfiles.git
+  chmod 0600 "$HOME/.config/chezmoi/chezmoi.toml"
+fi
+
+brew bundle --file=- <<EOF
+  tap "homebrew/bundle"
+  tap "homebrew/cask"
+  tap "homebrew/cask-fonts"
+  tap "homebrew/cask-versions"
+
+  brew "asdf"
+  brew "autojump"
+  brew "bat"
+  brew "chezmoi"
+  brew "direnv"
+  brew "fish"
+  brew "fisher"
+  brew "gh"
+  brew "git"
+  brew "neovim"
+  brew "thefuck"
+  brew "tldr"
+  brew "tmux"
+  brew "vim"
+  brew "yqrashawn/goku/goku"
+  brew "mas"
+
+  cask "1password-beta"
+  cask "alfred"
+  cask "cloudflare-warp"
+  cask "discord"
+  cask "dropbox"
+  cask "firefox-developer-edition"
+  cask "font-meslo-lg-nerd-font"
+  cask "insomnia"
+  cask "lens"
+  cask "postico"
+  cask "signal"
+  cask "sequel-pro-nightly"
+  cask "slack"
+  cask "steam"
+  cask "sublime-merge"
+  cask "sublime-text"
+  cask "telegram"
+  cask "visual-studio-code"
+  cask "protonvpn"
+  cask "brave-browser"
+  cask "kitty"
+  cask "docker"
+  cask "karabiner-elements"
+  cask "zerotier-one"
+  cask "cmake"
+
+  cask "stats"
+
+  mas "1Password for Safari", id: 1333542190
+  mas "Tailscale", id: 1475387142
+
+  # emacs
+  tap "railwaycat/emacsmacport"
+  cask "railwaycat/emacsmacport/emacs-mac"
+EOF
+
+echo "starting goku service..."
+NONINTERACTIVE=1 brew services start goku
+echo "starting goku service DONE."
+
+echo "installing brew DONE."
