@@ -1,5 +1,8 @@
 #!/bin/bash
 echo "installing brew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo "installing brew DONE."
 
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${HOME}/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo "installing brew DONE."
