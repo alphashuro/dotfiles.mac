@@ -1,0 +1,11 @@
+[[language]]
+name = "javascript"
+
+[language.debugger]
+command = "node"
+
+[[language]]
+name = "typescript"
+
+[language.debugger]
+command = "ts-node"
