@@ -6,3 +6,5 @@ if status is-interactive
 
     set LIBRARY_PATH $LIBRARY_PATH (brew --prefix)/lib (brew --prefix)/opt/libiconv/lib
 end
+
+thefuck --alias | source
