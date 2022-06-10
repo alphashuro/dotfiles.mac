@@ -325,7 +325,7 @@ M.config = {
 
     -- Default colorscheme
     -- @default = doom-one
-    colorscheme = "doom-one",
+    colorscheme = "doom-molokai",
 
     -- Background color
     -- @default = dark
