@@ -17,9 +17,13 @@ local M = {}
 M.source = debug.getinfo(1, "S").source:sub(2)
 
 M.plugins = {
-	{'tpope/vim-surround'}
+	{'tpope/vim-surround'},
+	{'renerocksai/calendar-vim'},
+	{'renerocksai/telekasten.nvim'},
+	{'tpope/vim-scriptease'}
 }
 
 return M
 
 -- vim: sw=2 sts=2 ts=2 noexpandtab
+
