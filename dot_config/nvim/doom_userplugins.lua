@@ -19,7 +19,19 @@ M.source = debug.getinfo(1, "S").source:sub(2)
 M.plugins = {
 	{'tpope/vim-surround'},
 	{'renerocksai/calendar-vim'},
-	{'renerocksai/telekasten.nvim'},
+	{
+		'renerocksai/telekasten.nvim',
+		config = function()
+			local home = vim.fn.expand("~/notes/alphashuro/")
+
+      require('telekasten').setup({
+      	home = home,
+      	take_over_my_home = true,
+				dailies = home .. '/' .. 'journal',
+				new_note_filename = "uuid-title"
+      })
+    end,
+	},
 	{'tpope/vim-scriptease'}
 }
 
