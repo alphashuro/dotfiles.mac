@@ -8,3 +8,4 @@ if status is-interactive
 end
 
 thefuck --alias | source
+zoxide init fish | source
