@@ -32,7 +32,8 @@ M.plugins = {
       })
     end,
 	},
-	{'tpope/vim-scriptease'}
+	{'tpope/vim-scriptease'},
+	{'NoahTheDuke/vim-just'}
 }
 
 return M

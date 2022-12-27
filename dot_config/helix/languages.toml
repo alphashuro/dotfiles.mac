@@ -1,11 +1,18 @@
 [[language]]
 name = "javascript"
 
-[language.debugger]
-command = "node"
+# [language.debugger]
+# name = "node"
+# command = "node"
 
 [[language]]
 name = "typescript"
+auto-format = true
 
-[language.debugger]
-command = "ts-node"
+[[grammar]]
+name = "typescript"
+source = { git = "https://github.com/tree-sitter/tree-sitter-typescript.git" }
+
+# [language.debugger]
+# name = "ts-node"
+# command = "ts-node"

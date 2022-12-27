@@ -1,0 +1,7 @@
+KIT=/Users/alpha/.kit
+KENV=/Users/alpha/.kenv
+KIT_TEMPLATE=default
+JOURNAL_DIR=/Users/alpha/notes/test-kit-journal
+JOURNAL_DIR=/Users/alpha/notes/test-kit-journal
+KIT_EDITOR=nvim
+KIT_MODE=ts

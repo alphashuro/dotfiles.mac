@@ -61,8 +61,10 @@ let-env EDITOR = 'hx'
 # let-env NIX_PROFILES = '/nix/var/nix/profiles/default /Users/alpha/.nix-profile'
 # let-env NIX_SSL_CERT_FILE = '/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt'
 let-env PATH = '/Users/alpha/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/opt/homebrew/bin:/Users/alpha/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/Users/alpha/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/kitty.app/Contents/MacOS'
+let-env SHELL = 'nu'
 
 mkdir ~/.cache/starship
 starship init nu | save ~/.cache/starship/init.nu
 
 zoxide init nushell --hook prompt | save ~/.zoxide.nu
+
