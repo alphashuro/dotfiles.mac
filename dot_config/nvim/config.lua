@@ -50,6 +50,12 @@ doom.use_keybind({
     end
   }
 })
+doom.use_keybind({
+  {"<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>", name = "find files"},
+  {"<leader><space>", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>", name = "find files"},
+})
+
+-- package.preload("nvim-tree")
 
 -- ADDING A COMMAND
 --
@@ -65,5 +71,7 @@ doom.use_keybind({
 -- })
 
 vim.diagnostic.config({virtual_text = false})
+
+doom.core.treesitter.settings.show_compiler_warning_message = false
 
 -- vim: sw=2 sts=2 ts=2 expandtab
