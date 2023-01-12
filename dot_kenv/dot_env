@@ -3,5 +3,8 @@ KENV=/Users/alpha/.kenv
 KIT_TEMPLATE=default
 JOURNAL_DIR=/Users/alpha/notes/test-kit-journal
 JOURNAL_DIR=/Users/alpha/notes/test-kit-journal
-KIT_EDITOR=nvim
+KIT_EDITOR=copy
 KIT_MODE=ts
+
+KIT_TERMINAL=kitty
+PATH=/Users/alpha/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/kitty.app/Contents/MacOS:/Users/alpha/.knode/bin:/Users/alpha/.kit/bin:/Users/alpha/.kit/bin/code:/Users/alpha/.kenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/alpha/.knode/bin:/Users/alpha/.kit/bin:/Users/alpha/.kit/bin/code:/Users/alpha/.kenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin

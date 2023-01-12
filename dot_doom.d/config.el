@@ -96,3 +96,35 @@
           (lambda ()
             ;; include *Code-Review* buffer into current workspace
             (persp-add-buffer (current-buffer))))
+
+;; use ctrl+h for backspace
+(define-key key-translation-map [?\C-h] [?\C-?])
+
+;; evil treesitter text objects
+;; bind `function.outer`(entire function block) to `f` for use in things like `vaf`, `yaf`
+(define-key evil-outer-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.outer"))
+;; bind `function.inner`(function block without name and args) to `f` for use in things like `vif`, `yif`
+(define-key evil-inner-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.inner"))
+
+;; You can also bind multiple items and we will match the first one we can find
+(define-key evil-outer-text-objects-map "a" (evil-textobj-tree-sitter-get-textobj ("conditional.outer" "loop.outer")))
+
+;; (use-package! typescript-mode
+;;   :after tree-sitter
+;;   :config
+;; ;;   ;; we choose this instead of tsx-mode so that eglot can automatically figure out language for server
+;; ;;   ;; see https://github.com/joaotavora/eglot/issues/624 and https://github.com/joaotavora/eglot#handling-quirky-servers
+;;    ;; (define-derived-mode typescriptreact-mode tsx-mode
+;;    ;;   "TypeScript TSX")
+
+;; ;;   ;; use our derived mode for tsx files
+;;     (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode))
+;; ;;   ;; by default, typescript-mode is mapped to the treesitter typescript parser
+;; ;;   ;; use our derived mode to map both .tsx AND .ts -> typescriptreact-mode -> treesitter tsx
+;;     (add-to-list 'evil-textobj-tree-sitter-major-mode-language-alist '(typescriptreact-mode . "tsx"))
+;; )
+
+(after! tsx-mode
+	(add-to-list 'evil-textobj-tree-sitter-major-mode-language-alist '(tsx-mode . "tsx”)))
+
+(add-hook 'typescript-mode-hook (lambda () (tree-sitter-mode 1)))

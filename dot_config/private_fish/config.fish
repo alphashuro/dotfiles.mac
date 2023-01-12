@@ -1,6 +1,6 @@
 if status is-interactive
-    set -x EDITOR nvim
-    source (brew --prefix)/share/autojump/autojump.fish
+    set -x EDITOR hx
+    set -U fish_greeting
 
     starship init fish | source
 
@@ -8,4 +8,4 @@ if status is-interactive
 end
 
 thefuck --alias | source
-zoxide init fish | source
+zoxide init --cmd j fish | source

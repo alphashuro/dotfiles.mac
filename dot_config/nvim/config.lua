@@ -22,10 +22,13 @@ doom.use_package({
   end
 })
 doom.use_package("tpope/vim-vinegar")
+doom.use_package("lervag/wiki.vim")
+doom.use_package("nvim-treesitter/nvim-treesitter-textobjects")
 
 doom.features.explorer.settings.view.mappings.list = {
   { key = "<CR>", action = "edit_in_place" }
 }
+doom.features.linter.settings.format_on_save = true
 
 -- print(vim.inspect(doom.features.explorer.settings.view))
 
@@ -71,6 +74,7 @@ doom.use_keybind({
 -- })
 
 vim.diagnostic.config({virtual_text = false})
+vim.g.wiki_root = '/Users/alpha/Library/CloudStorage/Dropbox/wiki'
 
 doom.core.treesitter.settings.show_compiler_warning_message = false
 

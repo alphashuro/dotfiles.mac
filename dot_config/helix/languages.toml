@@ -9,9 +9,9 @@ name = "javascript"
 name = "typescript"
 auto-format = true
 
-[[grammar]]
-name = "typescript"
-source = { git = "https://github.com/tree-sitter/tree-sitter-typescript.git" }
+# [[grammar]]
+# name = "typescript"
+# source = { git = "https://github.com/tree-sitter/tree-sitter-typescript.git" }
 
 # [language.debugger]
 # name = "ts-node"
