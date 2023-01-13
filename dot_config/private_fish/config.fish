@@ -4,8 +4,12 @@ if status is-interactive
 
     starship init fish | source
 
+    # why was this here again?
+    # something to do with rust and lld :thinking:
     set LIBRARY_PATH $LIBRARY_PATH (brew --prefix)/lib (brew --prefix)/opt/libiconv/lib
+
+    thefuck --alias | source
+    zoxide init --cmd j fish | source
 end
 
-thefuck --alias | source
-zoxide init --cmd j fish | source
+alias vimdiff='nvim -d'
