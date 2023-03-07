@@ -71,6 +71,41 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+  -- Distraction free writing
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {}
+    end
+  }
+
+  -- Dims inactive portions of the code you're editing
+  use {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup {}
+    end
+  }
+
+  -- space menu for great goodness
+  use {
+    'folke/which-key.nvim',
+    config = function ()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+
+      require("which-key").setup {}
+    end
+  }
+
+  -- Sneak but better
+  use {
+    'ggandor/leap.nvim',
+    config = function ()
+      require("leap").add_default_mappings()
+    end
+  }
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -314,7 +349,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
@@ -435,7 +470,7 @@ cmp.setup {
   },
 }
 
-vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 1
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
