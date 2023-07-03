@@ -49,8 +49,11 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 ;
-(package! tree-sitter-langs)
-(package! exec-path-from-shell)
-(package! prettier)
-(package! code-review)
+;; (package! tree-sitter-langs)
+;; (package! exec-path-from-shell)
+;; (package! prettier)
+;; (package! code-review)
 (package! evil-textobj-tree-sitter)
+
+(package! obsidian)
+(package! undo-tree)
