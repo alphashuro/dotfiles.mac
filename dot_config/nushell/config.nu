@@ -185,7 +185,7 @@ let light_theme = {
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   # true or false to enable or disable the welcome banner at startup
-  show_banner: true
+  show_banner: false
   ls: {
     use_ls_colors: true # use the LS_COLORS environment variable to colorize output
     clickable_links: true # enable or disable clickable links. Your terminal has to support links.
@@ -297,7 +297,7 @@ let-env config = {
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   bracketed_paste: true # enable bracketed paste, currently useless on windows
-  edit_mode: emacs # emacs, vi
+  edit_mode: vi # emacs, vi
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
@@ -542,4 +542,9 @@ let-env config = {
     }
   ]
 }
+
+# *******************************************************
+
+source ~/.cache/starship/init.nu
+source ~/.zoxide.nu
 
