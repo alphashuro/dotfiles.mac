@@ -9,7 +9,25 @@ if status is-interactive
     set LIBRARY_PATH $LIBRARY_PATH (brew --prefix)/lib (brew --prefix)/opt/libiconv/lib
 
     thefuck --alias | source
-    zoxide init --cmd j fish | source
+    zoxide init --cmd cd fish | source
+    
+    alias cat=bat
+    alias ls=lsd
 end
 
 alias vimdiff='nvim -d'
+alias k='kubectl'
+
+# pnpm
+set -gx PNPM_HOME "/Users/alpha/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
+
+source /Users/alpha/.config/op/plugins.sh
+
+fish_add_path /Users/alpha/.cargo/bin
+
+# set -x DOCKER_HOST 'unix:///Users/alpha/.local/share/containers/podman/machine/qemu/podman.sock'
+
+# tailscale cli
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
