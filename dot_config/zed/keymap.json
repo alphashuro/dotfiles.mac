@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-r": "editor::Rename",
+      "ctrl-shift-space": "editor::ShowCompletions"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-space": "command_palette::Toggle"
+    }
+  }
+]
